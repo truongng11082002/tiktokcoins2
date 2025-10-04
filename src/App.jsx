@@ -149,7 +149,7 @@ function App() {
                 <input
                   type="number"
                   className="custom-coin-input"
-                  placeholder="30-2,500,000"
+                  placeholder=""
                   value={customCoins}
                   onChange={(e) => {
                     const coins = e.target.value
