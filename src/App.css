@@ -271,7 +271,7 @@ body {
 }
 
 .custom-package {
-  cursor: default;
+  cursor: pointer;
 }
 
 .custom-input-wrapper {

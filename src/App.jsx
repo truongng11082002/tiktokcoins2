@@ -143,7 +143,14 @@ function App() {
                 <div className="coin-price">₫{pkg.price.toLocaleString()}</div>
               </div>
             ))}
-            <div className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}>
+            <div
+              className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}
+              onClick={() => {
+                if (customCoins) {
+                  setSelectedPackage({ coins: parseInt(customCoins), price: customPrice, isCustom: true })
+                }
+              }}
+            >
               <div className="custom-input-wrapper">
                 <img src={COIN_IMAGE} alt="coin" className="coin-img-custom" />
                 <input
