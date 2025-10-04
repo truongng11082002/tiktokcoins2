@@ -145,11 +145,6 @@ function App() {
             ))}
             <div
               className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}
-              onClick={() => {
-                if (customCoins) {
-                  setSelectedPackage({ coins: parseInt(customCoins), price: customPrice, isCustom: true })
-                }
-              }}
             >
               <div className="custom-input-wrapper">
                 <img src={COIN_IMAGE} alt="coin" className="coin-img-custom" />
@@ -173,13 +168,6 @@ function App() {
                       }
                     }
                   }}
-                  onFocus={(e) => {
-                    e.stopPropagation()
-                    if (customCoins) {
-                      setSelectedPackage({ coins: parseInt(customCoins), price: customPrice, isCustom: true })
-                    }
-                  }}
-                  onClick={(e) => e.stopPropagation()}
                 />
               </div>
               <div className="coin-price">
