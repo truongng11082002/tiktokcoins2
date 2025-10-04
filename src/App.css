@@ -280,6 +280,9 @@ body {
   justify-content: center;
   gap: 8px;
   margin-bottom: 10px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .coin-img-custom {
@@ -303,6 +306,10 @@ body {
   background-color: transparent;
   color: #161823;
   min-width: 0;
+  cursor: text;
+  pointer-events: auto;
+  z-index: 1;
+  position: relative;
 }
 
 .custom-coin-input:focus {
