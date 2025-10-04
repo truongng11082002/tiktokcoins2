@@ -169,7 +169,7 @@ function App() {
                 />
               </div>
               <div className="coin-price">
-                {customPrice ? `₫${parseInt(customPrice).toLocaleString()}` : 'Large amount supported'}
+                {customPrice ? `₫${parseInt(customPrice).toLocaleString()}` : '30-2,500,000'}
               </div>
             </div>
           </div>
