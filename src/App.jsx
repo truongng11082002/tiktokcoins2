@@ -24,6 +24,8 @@ function App() {
   const [showPayment, setShowPayment] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
   const [lastTransaction, setLastTransaction] = useState(null)
+  const [customCoins, setCustomCoins] = useState('')
+  const [customPrice, setCustomPrice] = useState('')
 
   const handleRecharge = () => {
     if (!tiktokId || !selectedPackage) {
@@ -141,12 +143,35 @@ function App() {
                 <div className="coin-price">₫{pkg.price.toLocaleString()}</div>
               </div>
             ))}
-            <div className="coin-package">
+            <div className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}>
               <div className="coin-amount">
                 <img src={COIN_IMAGE} alt="coin" className="coin-img" />
                 <span>Custom</span>
               </div>
-              <div className="coin-price">Large amount supported</div>
+              <input
+                type="number"
+                className="custom-coin-input"
+                placeholder="Enter coins"
+                value={customCoins}
+                onChange={(e) => {
+                  const coins = e.target.value
+                  setCustomCoins(coins)
+                  if (coins) {
+                    const calculatedPrice = Math.round(coins * 325)
+                    setCustomPrice(calculatedPrice)
+                    setSelectedPackage({ coins: parseInt(coins), price: calculatedPrice, isCustom: true })
+                  } else {
+                    setCustomPrice('')
+                    if (selectedPackage?.isCustom) {
+                      setSelectedPackage(null)
+                    }
+                  }
+                }}
+                onClick={(e) => e.stopPropagation()}
+              />
+              <div className="coin-price">
+                {customPrice ? `₫${parseInt(customPrice).toLocaleString()}` : 'Large amount supported'}
+              </div>
             </div>
           </div>
 

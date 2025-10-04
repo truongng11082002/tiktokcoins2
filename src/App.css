@@ -270,6 +270,35 @@ body {
   box-shadow: 0 4px 12px rgba(254, 44, 85, 0.15);
 }
 
+.custom-package {
+  cursor: default;
+}
+
+.custom-coin-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(22, 24, 35, 0.12);
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  transition: all 0.2s ease;
+  margin: 8px 0;
+  background-color: white;
+  color: #161823;
+}
+
+.custom-coin-input:focus {
+  border-color: #fe2c55;
+  box-shadow: 0 0 0 3px rgba(254, 44, 85, 0.08);
+}
+
+.custom-coin-input::placeholder {
+  color: rgba(22, 24, 35, 0.4);
+  font-weight: 500;
+}
+
 .coin-amount {
   display: flex;
   align-items: center;
@@ -289,6 +318,7 @@ body {
   font-weight: 500;
   position: relative;
   z-index: 1;
+  min-height: 20px;
 }
 
 .promo-section {
