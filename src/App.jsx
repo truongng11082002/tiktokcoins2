@@ -156,11 +156,17 @@ function App() {
                   value={customCoins}
                   onChange={(e) => {
                     const value = e.target.value.replace(/[^0-9]/g, '')
+                    const numValue = parseInt(value) || 0
+
+                    if (value && (numValue < 30 || numValue > 2500000)) {
+                      return
+                    }
+
                     setCustomCoins(value)
-                    if (value) {
-                      const calculatedPrice = Math.round(value * 325)
+                    if (value && numValue >= 30 && numValue <= 2500000) {
+                      const calculatedPrice = Math.round(numValue * 325)
                       setCustomPrice(calculatedPrice)
-                      setSelectedPackage({ coins: parseInt(value), price: calculatedPrice, isCustom: true })
+                      setSelectedPackage({ coins: numValue, price: calculatedPrice, isCustom: true })
                     } else {
                       setCustomPrice('')
                       if (selectedPackage?.isCustom) {
