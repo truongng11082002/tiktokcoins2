@@ -67,7 +67,7 @@ function App() {
       <header className="header">
         <div className="logo">
           <img src={LOGO_IMAGE} alt="TikTok" className="logo-icon" />
-          <span>TikTok</span>
+          <span>Nguyễn Gia Trường</span>
         </div>
         <div className="search-container">
           <input
