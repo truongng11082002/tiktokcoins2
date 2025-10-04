@@ -23,9 +23,9 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
       <div className="modal-overlay">
         <div className="modal-content processing-modal" onClick={(e) => e.stopPropagation()}>
           <div className="processing-content">
-            <div className="hourglass-icon">⏳</div>
-            <h2 className="processing-title">Đang xử lý thanh toán</h2>
-            <p className="processing-message">Vui lòng đợi trong giây lát...</p>
+            <div className="spinner-loader"></div>
+            <h2 className="processing-title">Processing Payment</h2>
+            <p className="processing-message">Please wait a moment...</p>
             <div className="processing-dots">
               <span className="dot"></span>
               <span className="dot"></span>
@@ -41,7 +41,7 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content payment-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2 className="modal-title">Hoàn tất thanh toán</h2>
+          <h2 className="modal-title">Complete Payment</h2>
           <button className="close-btn" onClick={onClose}>&times;</button>
         </div>
 
@@ -51,7 +51,7 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
             <strong>{tiktokId}</strong>
           </div>
           <div className="summary-row">
-            <span>Số Xu:</span>
+            <span>Coins:</span>
             <strong>
               <img
                 src="/pngwing.com.png"
@@ -62,13 +62,13 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
             </strong>
           </div>
           <div className="summary-row total-row">
-            <span>Tổng tiền:</span>
+            <span>Total Amount:</span>
             <strong>₫{selectedPackage.price.toLocaleString()}</strong>
           </div>
         </div>
 
         <div className="payment-method-section">
-          <h3 className="section-title">Chọn phương thức thanh toán</h3>
+          <h3 className="section-title">Select Payment Method</h3>
 
           {savedCards.map((card) => (
             <div
@@ -79,7 +79,7 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
               <div className="card-icon">{card.type}</div>
               <div className="card-details">
                 <div className="card-number">•••• •••• •••• {card.last4}</div>
-                <div className="card-expiry">Hết hạn {card.expiry}</div>
+                <div className="card-expiry">Expires {card.expiry}</div>
               </div>
               <div className="card-radio">
                 {selectedCard === card.id && <div className="radio-selected"></div>}
@@ -87,7 +87,7 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
             </div>
           ))}
 
-          <button className="add-card-btn">+ Thêm thẻ mới</button>
+          <button className="add-card-btn">+ Add New Card</button>
         </div>
 
         <button
@@ -95,12 +95,12 @@ function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
           onClick={handlePayment}
           disabled={processing || !selectedCard}
         >
-          Thanh toán ₫{selectedPackage.price.toLocaleString()}
+          Pay ₫{selectedPackage.price.toLocaleString()}
         </button>
 
         <div className="payment-security">
           <span className="security-icon">🔒</span>
-          <span>Thanh toán của bạn được bảo mật và mã hóa</span>
+          <span>Your payment is secured and encrypted</span>
         </div>
       </div>
     </div>

@@ -30,15 +30,15 @@ function TransactionHistory({ onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2 className="modal-title">Lịch sử giao dịch</h2>
+          <h2 className="modal-title">Transaction History</h2>
           <button className="close-btn" onClick={onClose}>&times;</button>
         </div>
 
         <div className="transaction-list">
           {loading ? (
-            <div className="loading">Đang tải...</div>
+            <div className="loading">Loading...</div>
           ) : transactions.length === 0 ? (
-            <div className="empty-state">Chưa có giao dịch nào</div>
+            <div className="empty-state">No transactions yet</div>
           ) : (
             transactions.map((transaction) => (
               <div key={transaction.id} className="transaction-item">
@@ -50,7 +50,7 @@ function TransactionHistory({ onClose }) {
                         alt="coin"
                         className="coin-img-small"
                       />
-                      {transaction.coin_amount.toLocaleString()} xu
+                      {transaction.coin_amount.toLocaleString()} coins
                     </span>
                     <span className={`transaction-status ${transaction.status}`}>
                       {transaction.status}
@@ -58,10 +58,10 @@ function TransactionHistory({ onClose }) {
                   </div>
                   <div className="transaction-details">
                     <div>TikTok ID: <strong>{transaction.tiktok_id}</strong></div>
-                    <div>Thanh toán: {transaction.payment_method}</div>
-                    <div>Số tiền: ₫{transaction.price.toLocaleString()}</div>
+                    <div>Payment: {transaction.payment_method}</div>
+                    <div>Amount: ₫{transaction.price.toLocaleString()}</div>
                     <div className="transaction-date">
-                      {new Date(transaction.created_at).toLocaleString('vi-VN')}
+                      {new Date(transaction.created_at).toLocaleString('en-US')}
                     </div>
                   </div>
                 </div>

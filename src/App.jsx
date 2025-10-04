@@ -27,7 +27,7 @@ function App() {
 
   const handleRecharge = () => {
     if (!tiktokId || !selectedPackage) {
-      alert('Vui lòng nhập TikTok ID và chọn gói coin')
+      alert('Please enter TikTok ID and select a coin package')
       return
     }
     setShowPayment(true)
@@ -58,7 +58,7 @@ function App() {
       setSelectedPackage(null)
     } catch (error) {
       console.error('Error saving transaction:', error)
-      alert('Có lỗi xảy ra khi lưu giao dịch')
+      alert('An error occurred while saving the transaction')
     }
   }
 
@@ -112,19 +112,19 @@ function App() {
           </div>
 
           <div className="input-section">
-            <label className="input-label">TikTok ID cần nạp</label>
+            <label className="input-label">TikTok ID to Recharge</label>
             <input
               type="text"
               className="tiktok-id-input"
-              placeholder="Nhập TikTok ID của bạn"
+              placeholder="Enter your TikTok ID"
               value={tiktokId}
               onChange={(e) => setTiktokId(e.target.value)}
             />
           </div>
 
           <div className="recharge-notice">
-            <div className="notice-title">Nạp:</div>
-            <div className="notice-text">Tiết kiệm khoảng 25% với phí dịch vụ của bên thứ ba thấp hơn.</div>
+            <div className="notice-title">Recharge:</div>
+            <div className="notice-text">Save about 25% with lower third-party service fees.</div>
           </div>
 
           <div className="coin-packages">
@@ -154,28 +154,28 @@ function App() {
             <div className="promo-icon">🎁</div>
             <div className="promo-content">
               <div className="promo-text">
-                Nạp để mở khóa hoàn tiền 5% lên đến USD250 cho lần mua Xu tiếp theo của bạn
+                Recharge to unlock 5% cashback up to USD250 for your next Coin purchase
               </div>
               <div className="promo-subtext">
-                Mã mời mặc định đã được áp dụng. Thay đổi mã ✏️
+                Default invite code has been applied. Change code ✏️
               </div>
             </div>
           </div>
 
           <div className="payment-section">
-            <div className="section-label">Phương thức thanh toán</div>
+            <div className="section-label">Payment Methods</div>
             <div className="payment-methods">
-              <div className="payment-method">VISA</div>
-              <div className="payment-method">MC</div>
-              <div className="payment-method">JCB</div>
-              <div className="payment-method">AMEX</div>
-              <div className="payment-method">UNION</div>
-              <div className="payment-method">DINERS</div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="VISA" className="payment-method-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="payment-method-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/JCB_logo.svg" alt="JCB" className="payment-method-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="AMEX" className="payment-method-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/UnionPay_logo.svg" alt="Union Pay" className="payment-method-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Diners_Club_Logo3.svg" alt="Diners Club" className="payment-method-img" />
             </div>
           </div>
 
           <div className="total-section">
-            <div className="total-label">Tổng</div>
+            <div className="total-label">Total</div>
             <div className="total-amount">
               ₫{selectedPackage ? selectedPackage.price.toLocaleString() : '0'}
             </div>
@@ -186,12 +186,12 @@ function App() {
             onClick={handleRecharge}
             disabled={!tiktokId || !selectedPackage}
           >
-            Nạp
+            Recharge
           </button>
 
           <div className="security-badge">
-            <div className="secure-icon">🔒 BẢO MẬT</div>
-            <span>Thanh toán an toàn và bảo mật</span>
+            <div className="secure-icon">🔒 SECURE</div>
+            <span>Safe and secure payment</span>
           </div>
         </div>
       </div>
