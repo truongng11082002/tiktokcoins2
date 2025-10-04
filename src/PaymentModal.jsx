@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 function PaymentModal({ tiktokId, selectedPackage, onClose, onSuccess }) {
-  const [selectedCard, setSelectedCard] = useState('visa-1234')
+  const [selectedCard, setSelectedCard] = useState('visa-6798')
   const [processing, setProcessing] = useState(false)
 
   const savedCards = [
-    { id: 'visa-1234', type: 'VISA', last4: '1234', expiry: '12/25' }
+    { id: 'visa-1234', type: 'VISA', last4: '6798', expiry: '12/25' }
   ]
 
   const handlePayment = async () => {
