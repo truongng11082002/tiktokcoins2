@@ -144,30 +144,30 @@ function App() {
               </div>
             ))}
             <div className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}>
-              <div className="coin-amount">
-                <img src={COIN_IMAGE} alt="coin" className="coin-img" />
-              </div>
-              <input
-                type="number"
-                className="custom-coin-input"
-                placeholder="Enter coins"
-                value={customCoins}
-                onChange={(e) => {
-                  const coins = e.target.value
-                  setCustomCoins(coins)
-                  if (coins) {
-                    const calculatedPrice = Math.round(coins * 325)
-                    setCustomPrice(calculatedPrice)
-                    setSelectedPackage({ coins: parseInt(coins), price: calculatedPrice, isCustom: true })
-                  } else {
-                    setCustomPrice('')
-                    if (selectedPackage?.isCustom) {
-                      setSelectedPackage(null)
+              <div className="custom-input-wrapper">
+                <img src={COIN_IMAGE} alt="coin" className="coin-img-custom" />
+                <input
+                  type="number"
+                  className="custom-coin-input"
+                  placeholder="30-2,500,000"
+                  value={customCoins}
+                  onChange={(e) => {
+                    const coins = e.target.value
+                    setCustomCoins(coins)
+                    if (coins) {
+                      const calculatedPrice = Math.round(coins * 325)
+                      setCustomPrice(calculatedPrice)
+                      setSelectedPackage({ coins: parseInt(coins), price: calculatedPrice, isCustom: true })
+                    } else {
+                      setCustomPrice('')
+                      if (selectedPackage?.isCustom) {
+                        setSelectedPackage(null)
+                      }
                     }
-                  }
-                }}
-                onClick={(e) => e.stopPropagation()}
-              />
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
               <div className="coin-price">
                 {customPrice ? `₫${parseInt(customPrice).toLocaleString()}` : 'Large amount supported'}
               </div>
