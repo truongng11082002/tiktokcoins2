@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { supabase } from './supabase'
 import TransactionHistory from './TransactionHistory'
 import PaymentModal from './PaymentModal'
+import { CoinIcon } from './CoinIcon'
 import './App.css'
 
 const coinPackages = [
@@ -14,7 +15,6 @@ const coinPackages = [
   { coins: 17500, price: 5690400 },
 ]
 
-const COIN_IMAGE = '/pngwing.com.png'
 const LOGO_IMAGE = 'https://icon2.cleanpng.com/20200922/xqh/transparent-social-media-1713858561643.webp'
 
 function App() {
@@ -107,7 +107,7 @@ function App() {
             <div className="user-details">
               <div className="username">@memorymusic...</div>
               <div className="user-balance">
-                <img src={COIN_IMAGE} alt="coin" className="coin-img-small" />
+                <CoinIcon size="20px" />
                 <span>2403</span>
               </div>
             </div>
@@ -137,7 +137,7 @@ function App() {
                 onClick={() => setSelectedPackage(pkg)}
               >
                 <div className="coin-amount">
-                  <img src={COIN_IMAGE} alt="coin" className="coin-img" />
+                  <CoinIcon size="40px" />
                   <span>{pkg.coins.toLocaleString()}</span>
                 </div>
                 <div className="coin-price">₫{pkg.price.toLocaleString()}</div>
@@ -147,7 +147,7 @@ function App() {
               className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}
             >
               <div className="custom-input-wrapper">
-                <img src={COIN_IMAGE} alt="coin" className="coin-img-custom" />
+                <CoinIcon size="40px" />
                 <input
                   type="text"
                   inputMode="numeric"
@@ -269,7 +269,7 @@ function App() {
                 <div className="success-row">
                   <span>Coins:</span>
                   <strong>
-                    <img src={COIN_IMAGE} alt="coin" className="coin-img-small" />
+                    <CoinIcon size="16px" style={{ marginRight: '4px' }} />
                     {lastTransaction.coin_amount.toLocaleString()}
                   </strong>
                 </div>
