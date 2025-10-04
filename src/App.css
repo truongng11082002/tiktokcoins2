@@ -266,7 +266,7 @@ body {
 
 .coin-package.selected {
   border-color: #fe2c55;
-  background: linear-gradient(135deg, rgba(254, 44, 85, 0.08) 0%, rgba(254, 44, 85, 0.03) 100%);
+  background-color: white;
   box-shadow: 0 4px 12px rgba(254, 44, 85, 0.15);
 }
 
