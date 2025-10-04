@@ -147,17 +147,18 @@ function App() {
               <div className="custom-input-wrapper">
                 <img src={COIN_IMAGE} alt="coin" className="coin-img-custom" />
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
                   className="custom-coin-input"
                   placeholder=""
                   value={customCoins}
                   onChange={(e) => {
-                    const coins = e.target.value
-                    setCustomCoins(coins)
-                    if (coins) {
-                      const calculatedPrice = Math.round(coins * 325)
+                    const value = e.target.value.replace(/[^0-9]/g, '')
+                    setCustomCoins(value)
+                    if (value) {
+                      const calculatedPrice = Math.round(value * 325)
                       setCustomPrice(calculatedPrice)
-                      setSelectedPackage({ coins: parseInt(coins), price: calculatedPrice, isCustom: true })
+                      setSelectedPackage({ coins: parseInt(value), price: calculatedPrice, isCustom: true })
                     } else {
                       setCustomPrice('')
                       if (selectedPackage?.isCustom) {
