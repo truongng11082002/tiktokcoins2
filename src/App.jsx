@@ -170,7 +170,6 @@ function App() {
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/JCB_logo.svg" alt="JCB" className="payment-method-img" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="AMEX" className="payment-method-img" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/UnionPay_logo.svg" alt="Union Pay" className="payment-method-img" />
-
             </div>
           </div>
 
