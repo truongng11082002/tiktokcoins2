@@ -173,6 +173,12 @@ function App() {
                       }
                     }
                   }}
+                  onFocus={(e) => {
+                    e.stopPropagation()
+                    if (customCoins) {
+                      setSelectedPackage({ coins: parseInt(customCoins), price: customPrice, isCustom: true })
+                    }
+                  }}
                   onClick={(e) => e.stopPropagation()}
                 />
               </div>
