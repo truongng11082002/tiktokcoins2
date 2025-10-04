@@ -146,7 +146,6 @@ function App() {
             <div className={`coin-package custom-package ${selectedPackage?.isCustom ? 'selected' : ''}`}>
               <div className="coin-amount">
                 <img src={COIN_IMAGE} alt="coin" className="coin-img" />
-                <span>Custom</span>
               </div>
               <input
                 type="number"

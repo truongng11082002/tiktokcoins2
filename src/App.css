@@ -277,21 +277,21 @@ body {
 .custom-coin-input {
   width: 100%;
   padding: 10px 12px;
-  border: 2px solid rgba(22, 24, 35, 0.12);
-  border-radius: 8px;
+  border: none;
+  border-bottom: 2px solid rgba(22, 24, 35, 0.12);
+  border-radius: 0;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   outline: none;
   transition: all 0.2s ease;
   margin: 8px 0;
-  background-color: white;
+  background-color: transparent;
   color: #161823;
 }
 
 .custom-coin-input:focus {
-  border-color: #fe2c55;
-  box-shadow: 0 0 0 3px rgba(254, 44, 85, 0.08);
+  border-bottom-color: #fe2c55;
 }
 
 .custom-coin-input::placeholder {
