@@ -105,7 +105,7 @@ function App() {
             <div className="user-avatar">M
             </div>
             <div className="user-details">
-              <div className="username">@memorymusic...</div>
+              <div className="username">memorymusic...</div>
               <div className="user-balance">
                 <CoinIcon size="20px" />
                 <span>2403</span>
